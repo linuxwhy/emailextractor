@@ -22,18 +22,18 @@ production < common:
 	database:
 			driver = mysql
 			host = localhost
-			database = emailex_27700
-			username = emailex_27700
-			password = 4aoaFTbd8cvWxp
+			database = root
+			username = root
+			password = root
 			charset = utf8
 			profiler: false
 development < common:
 	database:
 		driver = mysql
 		host = localhost
-		database = emailex_27700
-		username = emailex_27700
-		password = 4aoaFTbd8cvWxp
+		database = root
+		username = root
+		password = root
 		charset = utf8
 		profiler: false
 console < common:
