@@ -1,0 +1,13 @@
+{block #content}
+
+	{assign parent => NULL}
+	{block #tree}
+		<ul n:ifset="$tree[$parent]">
+			{foreach $tree[$parent] as $m}
+				<li>
+					<a href="http://{$m['link']}">{$m['link']}</a>
+					{include #this parent => $m['id']}
+				</li>
+			{/foreach}
+		</ul>
+	{/block}

@@ -1,0 +1,17 @@
+<textarea>
+{foreach $emails_tree as $k=>$email_group}{if count($email_group) > 5}{foreach $email_group as $e}{$e};
+{/foreach}{else}{$email_group[0]};
+{/if}{/foreach}</textarea>
+
+<ul>
+{foreach $emails_tree as $k=>$email_group}
+	<li>
+		{$k} {? echo count($email_group)}
+		<ul>
+		{foreach $email_group as $e}
+			<li>{$e}</li>
+		{/foreach}
+		</ul>
+	</li>
+{/foreach}
+</ul>

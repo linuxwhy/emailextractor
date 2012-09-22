@@ -1,0 +1,27 @@
+
+{block content}
+{control searchForm}
+
+{ifset $list}
+<h1>Email ({? echo count($list)})</h1>
+<table>
+{foreach $list as $l}
+	<tr>
+		<td>{$l->email},</td>
+	</tr>
+{/foreach}
+	</table>
+{/ifset}
+
+{ifset $sql}
+<h1>Dotazy</h1>
+<p>
+<table>
+{foreach $sql as $l}
+	<tr>
+		<td>{$l}</td>
+	</tr>
+{/foreach}
+	</table>
+</p>
+{/ifset}
