@@ -7,7 +7,7 @@
  */
 class EmailSearchPresenter extends BasePresenter {
 
-	function actionSearch(NFORM $f){
+	function actionSearch(Nette\Forms\Form $f){
 		
 		$this->template->sql = array();
 		
@@ -83,7 +83,7 @@ class EmailSearchPresenter extends BasePresenter {
 	}
 	
 	function createComponentSearchForm($name) {
-		$f = new NAppForm;
+		$f = new Nette\Application\UI\Form;
 		$f->addText('query', 'Hladany text');
 		$f->addSubmit('btn', 'Vyhladaj');
 		$f->addSelect('spojka', 'Spojka medzi slovami', array('or'=>'or', 'and'=>'and'));

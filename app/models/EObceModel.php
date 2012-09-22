@@ -1,6 +1,6 @@
 <?php
 
-class EObceModel extends NObject{
+class EObceModel extends Nette\Object{
 	
 	
 	

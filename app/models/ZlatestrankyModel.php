@@ -1,6 +1,6 @@
 <?php
 
-class ZlatestrankyModel extends NObject{
+class ZlatestrankyModel extends Nette\Object{
 	
 	
 	
@@ -114,7 +114,7 @@ class ZlatestrankyModel extends NObject{
 				'title'=>$title,
 				'keywords'=>$keywords,
 				'description'=>$description,
-				'add_date'=>dibi::datetime(),
+				'add_date'=>new DibiDateTime(),
 				'info'=>$text
 			);
 

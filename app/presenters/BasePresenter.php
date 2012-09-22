@@ -14,7 +14,7 @@
  * @author     John Doe
  * @package    MyApplication
  */
-abstract class BasePresenter extends NPresenter
+abstract class BasePresenter extends Nette\Application\UI\Presenter
 {
 
 }

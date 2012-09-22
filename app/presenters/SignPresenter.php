@@ -21,11 +21,11 @@ class SignPresenter extends BasePresenter
 
 	/**
 	 * Sign in form component factory.
-	 * @return NAppForm
+	 * @return Nette\Application\UI\Form
 	 */
 	protected function createComponentSignInForm()
 	{
-		$form = new NAppForm;
+		$form = new Nette\Application\UI\Form;
 		$form->addText('username', 'Username:')
 			->setRequired('Please provide a username.');
 
@@ -54,7 +54,7 @@ class SignPresenter extends BasePresenter
 			$this->getUser()->login($values->username, $values->password);
 			$this->redirect('Homepage:');
 
-		} catch (NAuthenticationException $e) {
+		} catch (Nette\Security\AuthenticationException $e) {
 			$form->addError($e->getMessage());
 		}
 	}

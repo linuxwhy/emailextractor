@@ -20,5 +20,8 @@ define('TEMP_DIR', WWW_DIR . '/../temp');
 
 define('LOG_DIR', WWW_DIR . '/../log');
 
+
+define('VENDOR_DIR', WWW_DIR . '/../vendor');
+
 // load bootstrap file
 require APP_DIR . '/bootstrap.php';

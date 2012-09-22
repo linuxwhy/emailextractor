@@ -1,6 +1,6 @@
 <?php
 
-class ExtractorModel extends NObject{
+class ExtractorModel extends Nette\Object{
 	static function getFluent(){
 		return dibi::select("email")
 				->from("link")

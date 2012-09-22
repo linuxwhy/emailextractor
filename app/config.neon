@@ -11,29 +11,37 @@ common:
 		# zlib.output_compression: yes
 		# default_charset: "UTF-8"
 
-	service:
-		Nette\Security\IAuthenticator: UsersModel
-		Nette\Loaders\RobotLoader:
-			option:
-				directory: [%appDir%, %libsDir%]
-			run: true
+	services:
+		dibi:
+			factory: DibiConnection
+			arguments: [%database%]
+
+		connection:
+			factory: @dibi
+
+	parameters:
+		tempDir: %wwwDir%/../temp
+		logDir: %wwwDir%/../log
 
 production < common:
-	database:
+	parameters:
+		database:
 			driver = mysql
 			host = localhost
-			database = root
+			database = emailex_27700
+			username = emailex_27700
+			password = 4aoaFTbd8cvWxp
+			charset = utf8
+			profiler: false
+
+development < common:
+	parameters:
+		database:
+			driver = mysql
+			host = localhost
+			database = email_extractor
 			username = root
 			password = root
 			charset = utf8
 			profiler: false
-development < common:
-	database:
-		driver = mysql
-		host = localhost
-		database = root
-		username = root
-		password = root
-		charset = utf8
-		profiler: false
 console < common:

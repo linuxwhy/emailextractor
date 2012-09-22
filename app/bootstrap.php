@@ -1,57 +1,52 @@
 <?php
-
 /**
- * My NApplication bootstrap file.
+ * My Application bootstrap file.
  */
- 
+use Nette\Application\Routers\Route;
+
+
+
+ini_set('error_reporting',E_ALL^E_NOTICE);
+ini_set('display_errors',1);
+
 
 
 // Load Nette Framework
 // this allows load Nette Framework classes automatically so that
 // you don't have to litter your code with 'require' statements
-require LIBS_DIR . '/Nette/loader.php';
-
-
-// Enable NDebug for error visualisation & logging
-NDebug::$strictMode = TRUE;
-NEnvironment::setMode('production', FALSE);
-
-$_ips = array(
-	'95.103.8.133'
-);
-
-if ( in_array($_SERVER['REMOTE_ADDR'], $_ips) ) {
-  	NEnvironment::setMode('production', FALSE);  	
-	NDebug::enable(false); 
-} else {
-	NDebug::enable( NDebug::DETECT, LOG_DIR, 'form@vizion.sk');
-}unset($_ips);
-
-NDebug::enable();
-
-
-// Load configuration from config.neon file
-NEnvironment::loadConfig();
-
+require VENDOR_DIR . '/autoload.php';
 
 // Configure application
-$application = NEnvironment::getApplication();
-$application->errorPresenter = 'Error';
-//$application->catchExceptions = TRUE;
-//var_dump(NEnvironment::getConfig()->database);exit;
+$configurator = new Nette\Config\Configurator;
 
-	dibi::connect ( (array)NEnvironment::getConfig()->database );
+// Enable Nette Debugger for error visualisation & logging
+//$configurator->setDebugMode($configurator::AUTO);
+$configurator->enableDebugger(__DIR__ . '/../log');
 
+// Enable RobotLoader - this will load all classes automatically
+$configurator->setTempDirectory(__DIR__ . '/../temp');
+$configurator->createRobotLoader()
+	->addDirectory(APP_DIR)
+	->addDirectory(LIBS_DIR)
+	->register();
+
+// Create Dependency Injection container from config.neon file
+$configurator->addConfig(__DIR__ . '/config.neon');
+$container = $configurator->createContainer();
+
+Addons\Panels\Callback::register($container);
+
+try {
+	dibi::setConnection ( $container->dibi );
+} catch ( Exception $e ) {
+	echo "Nepodarilo sa pripojit";
+	exit ();
+}
 
 // Setup router
-{
-	$router = $application->getRouter();
-
-	$router[] = new NRoute('index.php', 'Homepage:default', NRoute::ONE_WAY);
-
-	$router[] = new NRoute('<presenter>/<action>[/<id>]', 'Homepage:default');
-};
+$container->router[] = new Route('index.php', 'Homepage:default', Route::ONE_WAY);
+$container->router[] = new Route('<presenter>/<action>[/<id>]', 'Homepage:default');
 
 
-// Run the application!
-$application->run();
+// Configure and run the application!
+$container->application->run();
