@@ -37,7 +37,7 @@ $configurator->addConfig(APP_DIR . '/config.neon');
 $container = $configurator->createContainer();
 
 Addons\Panels\Callback::register($container);
-
+//Kdyby\Extension\Diagnostics\HtmlValidator\DI\ValidatorExtension::register($configurator);
 try {
 	dibi::setConnection ( $container->dibi );
 } catch ( Exception $e ) {

@@ -6,4 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Kdyby\\Extension\\Diagnostics\\HtmlValidator' => $vendorDir . '/kdyby/html-validator-panel/',
 );

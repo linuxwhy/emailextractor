@@ -1,13 +1,5 @@
 <?php
 
-/**
- * My NApplication
- *
- * @copyright  Copyright (c) 2010 John Doe
- * @package    MyApplication
- */
-
-
 
 /**
  * Users authenticator.

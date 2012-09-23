@@ -14,7 +14,7 @@
             "reference": "v2.0.1",
             "shasum": ""
         },
-        "time": "2012-03-30 20:45:37",
+        "time": "2012-03-30 18:45:37",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -64,7 +64,7 @@
             "reference": "v2.0.5",
             "shasum": ""
         },
-        "time": "2012-08-30 13:15:24",
+        "time": "2012-08-30 11:15:24",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -107,6 +107,57 @@
             "neon",
             "mailing",
             "images"
+        ]
+    },
+    {
+        "name": "kdyby/html-validator-panel",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "target-dir": "Kdyby/Extension/Diagnostics/HtmlValidator",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Kdyby/HtmlValidatorPanel",
+            "reference": "c5e0382a1a30d6148bf8b460de5f0e4b61785205"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://github.com/Kdyby/HtmlValidatorPanel/zipball/c5e0382a1a30d6148bf8b460de5f0e4b61785205",
+            "reference": "c5e0382a1a30d6148bf8b460de5f0e4b61785205",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.2",
+            "nette/nette": "*"
+        },
+        "conflict": {
+            "kdyby/framework": "self.version"
+        },
+        "time": "2012-09-23 10:35:05",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Kdyby\\Extension\\Diagnostics\\HtmlValidator": ""
+            }
+        },
+        "license": [
+            "BSD-3-Clause",
+            "GPL-2.0",
+            "GPL-3.0"
+        ],
+        "authors": [
+            {
+                "name": "Filip Procházka",
+                "homepage": "http://filip-prochazka.com"
+            }
+        ],
+        "description": "Nette DebugBar panel for validating the output HTML.",
+        "homepage": "http://kdyby.org",
+        "keywords": [
+            "validator",
+            "html",
+            "nette",
+            "kdyby"
         ]
     }
 ]

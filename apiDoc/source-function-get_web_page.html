@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+	<meta name="robots" content="noindex" />
+
+	<title>File get_web_page.php</title>
+
+	<script type="text/javascript" src="resources/combined.js?2981547712"></script>
+	<script type="text/javascript" src="elementlist.js?1111712725"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li><a href="namespace-Addons.html">Addons<span></span></a>
+						<ul>
+				<li><a href="namespace-Addons.Panels.html">Panels</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-FbTools.html">FbTools</a>
+						</li>
+				<li class="active"><a href="namespace-None.html">None</a>
+						</li>
+				<li><a href="namespace-Panel.html">Panel</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Classgen.html">Classgen</a></li>
+				<li><a href="class-CleverRouter.html">CleverRouter</a></li>
+				<li><a href="class-EmailProtection.html">EmailProtection</a></li>
+				<li><a href="class-FbTools2_OpenGraphTags.html">FbTools2_OpenGraphTags</a></li>
+				<li><a href="class-FbTools_ActivityFeed.html">FbTools_ActivityFeed</a></li>
+				<li><a href="class-FbTools_Comments.html">FbTools_Comments</a></li>
+				<li><a href="class-FbTools_LikeBox.html">FbTools_LikeBox</a></li>
+				<li><a href="class-FbTools_LikeButton.html">FbTools_LikeButton</a></li>
+				<li><a href="class-FbTools_OpenGraphTags.html">FbTools_OpenGraphTags</a></li>
+				<li><a href="class-GooglePlusone.html">GooglePlusone</a></li>
+				<li><a href="class-MarkupControl.html">MarkupControl</a></li>
+				<li><a href="class-MobileDetection.html">MobileDetection</a></li>
+				<li><a href="class-MyPresenter.html">MyPresenter</a></li>
+				<li><a href="class-RssControl.html">RssControl</a></li>
+				<li><a href="class-simple_html_dom.html">simple_html_dom</a></li>
+				<li><a href="class-simple_html_dom_node.html">simple_html_dom_node</a></li>
+			</ul>
+
+
+
+
+
+			<h3>Functions</h3>
+			<ul>
+				<li><a href="function-dump_html_tree.html">dump_html_tree</a></li>
+				<li><a href="function-file_get_dom.html">file_get_dom</a></li>
+				<li><a href="function-file_get_html.html">file_get_html</a></li>
+				<li><a href="function-find_contains.html">find_contains</a></li>
+				<li class="active"><a href="function-get_web_page.html">get_web_page</a></li>
+				<li><a href="function-html_no_comment.html">html_no_comment</a></li>
+				<li><a href="function-my_callback.html">my_callback</a></li>
+				<li><a href="function-scraping_digg.html">scraping_digg</a></li>
+				<li><a href="function-scraping_IMDB.html">scraping_IMDB</a></li>
+				<li><a href="function-scraping_slashdot.html">scraping_slashdot</a></li>
+				<li><a href="function-str_get_dom.html">str_get_dom</a></li>
+				<li><a href="function-str_get_html.html">str_get_html</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-None.html" title="Summary of None"><span>Namespace</span></a>
+			</li>
+			<li>
+				<a href="function-get_web_page.html" title="Summary of get_web_page"><span>Function</span></a>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<pre><code><span id="1" class="l"><a class="l" href="#1">  1: </a><span class="xlang">&lt;?php</span>
+</span><span id="2" class="l"><a class="l" href="#2">  2: </a><span class="php-comment">/**
+</span></span><span id="3" class="l"><a class="l" href="#3">  3: </a><span class="php-comment"> * Copyright (c) 2008, David R. Nadeau, NadeauSoftware.com.
+</span></span><span id="4" class="l"><a class="l" href="#4">  4: </a><span class="php-comment"> * All rights reserved.
+</span></span><span id="5" class="l"><a class="l" href="#5">  5: </a><span class="php-comment"> *
+</span></span><span id="6" class="l"><a class="l" href="#6">  6: </a><span class="php-comment"> * Redistribution and use in source and binary forms, with or without
+</span></span><span id="7" class="l"><a class="l" href="#7">  7: </a><span class="php-comment"> * modification, are permitted provided that the following conditions
+</span></span><span id="8" class="l"><a class="l" href="#8">  8: </a><span class="php-comment"> * are met:
+</span></span><span id="9" class="l"><a class="l" href="#9">  9: </a><span class="php-comment"> *
+</span></span><span id="10" class="l"><a class="l" href="#10"> 10: </a><span class="php-comment"> *  * Redistributions of source code must retain the above copyright
+</span></span><span id="11" class="l"><a class="l" href="#11"> 11: </a><span class="php-comment"> *    notice, this list of conditions and the following disclaimer.
+</span></span><span id="12" class="l"><a class="l" href="#12"> 12: </a><span class="php-comment"> *
+</span></span><span id="13" class="l"><a class="l" href="#13"> 13: </a><span class="php-comment"> *  * Redistributions in binary form must reproduce the above
+</span></span><span id="14" class="l"><a class="l" href="#14"> 14: </a><span class="php-comment"> *    copyright notice, this list of conditions and the following
+</span></span><span id="15" class="l"><a class="l" href="#15"> 15: </a><span class="php-comment"> *    disclaimer in the documentation and/or other materials provided
+</span></span><span id="16" class="l"><a class="l" href="#16"> 16: </a><span class="php-comment"> *    with the distribution.
+</span></span><span id="17" class="l"><a class="l" href="#17"> 17: </a><span class="php-comment"> *
+</span></span><span id="18" class="l"><a class="l" href="#18"> 18: </a><span class="php-comment"> *  * Neither the names of David R. Nadeau or NadeauSoftware.com, nor
+</span></span><span id="19" class="l"><a class="l" href="#19"> 19: </a><span class="php-comment"> *    the names of its contributors may be used to endorse or promote
+</span></span><span id="20" class="l"><a class="l" href="#20"> 20: </a><span class="php-comment"> *    products derived from this software without specific prior
+</span></span><span id="21" class="l"><a class="l" href="#21"> 21: </a><span class="php-comment"> *    written permission.
+</span></span><span id="22" class="l"><a class="l" href="#22"> 22: </a><span class="php-comment"> *
+</span></span><span id="23" class="l"><a class="l" href="#23"> 23: </a><span class="php-comment"> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+</span></span><span id="24" class="l"><a class="l" href="#24"> 24: </a><span class="php-comment"> * &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+</span></span><span id="25" class="l"><a class="l" href="#25"> 25: </a><span class="php-comment"> * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+</span></span><span id="26" class="l"><a class="l" href="#26"> 26: </a><span class="php-comment"> * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+</span></span><span id="27" class="l"><a class="l" href="#27"> 27: </a><span class="php-comment"> * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+</span></span><span id="28" class="l"><a class="l" href="#28"> 28: </a><span class="php-comment"> * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+</span></span><span id="29" class="l"><a class="l" href="#29"> 29: </a><span class="php-comment"> * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+</span></span><span id="30" class="l"><a class="l" href="#30"> 30: </a><span class="php-comment"> * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+</span></span><span id="31" class="l"><a class="l" href="#31"> 31: </a><span class="php-comment"> * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+</span></span><span id="32" class="l"><a class="l" href="#32"> 32: </a><span class="php-comment"> * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
+</span></span><span id="33" class="l"><a class="l" href="#33"> 33: </a><span class="php-comment"> * WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY
+</span></span><span id="34" class="l"><a class="l" href="#34"> 34: </a><span class="php-comment"> * OF SUCH DAMAGE.
+</span></span><span id="35" class="l"><a class="l" href="#35"> 35: </a><span class="php-comment"> */</span>
+</span><span id="36" class="l"><a class="l" href="#36"> 36: </a>
+</span><span id="37" class="l"><a class="l" href="#37"> 37: </a><span class="php-comment">/*
+</span></span><span id="38" class="l"><a class="l" href="#38"> 38: </a><span class="php-comment"> * This is a BSD License approved by the Open Source Initiative (OSI).
+</span></span><span id="39" class="l"><a class="l" href="#39"> 39: </a><span class="php-comment"> * See:  http://www.opensource.org/licenses/bsd-license.php
+</span></span><span id="40" class="l"><a class="l" href="#40"> 40: </a><span class="php-comment"> */</span>
+</span><span id="41" class="l"><a class="l" href="#41"> 41: </a>
+</span><span id="42" class="l"><a class="l" href="#42"> 42: </a>
+</span><span id="43" class="l"><a class="l" href="#43"> 43: </a><span class="php-comment">/**
+</span></span><span id="44" class="l"><a class="l" href="#44"> 44: </a><span class="php-comment"> * Get a file on the web.  The file may be an (X)HTML page, an image, etc.
+</span></span><span id="45" class="l"><a class="l" href="#45"> 45: </a><span class="php-comment"> * Return an associative array containing the page header, contents,
+</span></span><span id="46" class="l"><a class="l" href="#46"> 46: </a><span class="php-comment"> * and HTTP status code.
+</span></span><span id="47" class="l"><a class="l" href="#47"> 47: </a><span class="php-comment"> *
+</span></span><span id="48" class="l"><a class="l" href="#48"> 48: </a><span class="php-comment"> * Values in the returned array are as defined by the CURL curl_getinfo()
+</span></span><span id="49" class="l"><a class="l" href="#49"> 49: </a><span class="php-comment"> * function, and include:
+</span></span><span id="50" class="l"><a class="l" href="#50"> 50: </a><span class="php-comment"> *
+</span></span><span id="51" class="l"><a class="l" href="#51"> 51: </a><span class="php-comment"> *  &quot;url&quot;       the last effective URL after redirects
+</span></span><span id="52" class="l"><a class="l" href="#52"> 52: </a><span class="php-comment"> *  &quot;http_code&quot; the last error/status code
+</span></span><span id="53" class="l"><a class="l" href="#53"> 53: </a><span class="php-comment"> *  &quot;content_type&quot;  the content type from the header
+</span></span><span id="54" class="l"><a class="l" href="#54"> 54: </a><span class="php-comment"> *
+</span></span><span id="55" class="l"><a class="l" href="#55"> 55: </a><span class="php-comment"> * This function adds a few more:
+</span></span><span id="56" class="l"><a class="l" href="#56"> 56: </a><span class="php-comment"> *
+</span></span><span id="57" class="l"><a class="l" href="#57"> 57: </a><span class="php-comment"> *  &quot;content&quot;   the page content (text, image, etc.)
+</span></span><span id="58" class="l"><a class="l" href="#58"> 58: </a><span class="php-comment"> *  &quot;errno&quot;     the CURL error code
+</span></span><span id="59" class="l"><a class="l" href="#59"> 59: </a><span class="php-comment"> *  &quot;errmsg&quot;    the CURL error message
+</span></span><span id="60" class="l"><a class="l" href="#60"> 60: </a><span class="php-comment"> *
+</span></span><span id="61" class="l"><a class="l" href="#61"> 61: </a><span class="php-comment"> * On success, &quot;errno&quot; is 0, &quot;http_code&quot; is 200, and &quot;content&quot; has the
+</span></span><span id="62" class="l"><a class="l" href="#62"> 62: </a><span class="php-comment"> * web page.
+</span></span><span id="63" class="l"><a class="l" href="#63"> 63: </a><span class="php-comment"> *
+</span></span><span id="64" class="l"><a class="l" href="#64"> 64: </a><span class="php-comment"> * On an error with the URL, such as a redirect limit, or timeout,
+</span></span><span id="65" class="l"><a class="l" href="#65"> 65: </a><span class="php-comment"> * &quot;errno&quot; will be non-zero and &quot;errmsg&quot; will contain an error message.
+</span></span><span id="66" class="l"><a class="l" href="#66"> 66: </a><span class="php-comment"> * There other fields will be missing.
+</span></span><span id="67" class="l"><a class="l" href="#67"> 67: </a><span class="php-comment"> *
+</span></span><span id="68" class="l"><a class="l" href="#68"> 68: </a><span class="php-comment"> * On an error with the web site, such as a missing page, no permissions,
+</span></span><span id="69" class="l"><a class="l" href="#69"> 69: </a><span class="php-comment"> * or no service, &quot;errno&quot; will be 0, &quot;http_code&quot; will be the HTTP error
+</span></span><span id="70" class="l"><a class="l" href="#70"> 70: </a><span class="php-comment"> * code, and &quot;content&quot; will be missing.
+</span></span><span id="71" class="l"><a class="l" href="#71"> 71: </a><span class="php-comment"> *
+</span></span><span id="72" class="l"><a class="l" href="#72"> 72: </a><span class="php-comment"> * Parameters:
+</span></span><span id="73" class="l"><a class="l" href="#73"> 73: </a><span class="php-comment"> *  url     the URL of the page to get
+</span></span><span id="74" class="l"><a class="l" href="#74"> 74: </a><span class="php-comment"> *
+</span></span><span id="75" class="l"><a class="l" href="#75"> 75: </a><span class="php-comment"> * Return values:
+</span></span><span id="76" class="l"><a class="l" href="#76"> 76: </a><span class="php-comment"> *  An associative array containing the page text and error codes,
+</span></span><span id="77" class="l"><a class="l" href="#77"> 77: </a><span class="php-comment"> *  as described above.
+</span></span><span id="78" class="l"><a class="l" href="#78"> 78: </a><span class="php-comment"> *
+</span></span><span id="79" class="l"><a class="l" href="#79"> 79: </a><span class="php-comment"> * See also:
+</span></span><span id="80" class="l"><a class="l" href="#80"> 80: </a><span class="php-comment"> *  http://nadeausoftware.com/articles/2007/06/php_tip_how_get_web_page_using_curl
+</span></span><span id="81" class="l"><a class="l" href="#81"> 81: </a><span class="php-comment"> */</span>
+</span><span id="82" class="l"><a class="l" href="#82"> 82: </a><span class="php-keyword1">function</span> <a id="_get_web_page" href="#_get_web_page">get_web_page</a>( <span class="php-var">$url</span> )
+</span><span id="83" class="l"><a class="l" href="#83"> 83: </a>{
+</span><span id="84" class="l"><a class="l" href="#84"> 84: </a>    <span class="php-var">$options</span> = <span class="php-keyword1">array</span>(
+</span><span id="85" class="l"><a class="l" href="#85"> 85: </a>        CURLOPT_RETURNTRANSFER =&gt; <span class="php-keyword1">true</span>,     <span class="php-comment">// return web page</span>
+</span><span id="86" class="l"><a class="l" href="#86"> 86: </a>        CURLOPT_HEADER         =&gt; <span class="php-keyword1">false</span>,    <span class="php-comment">// don't return headers</span>
+</span><span id="87" class="l"><a class="l" href="#87"> 87: </a>        CURLOPT_FOLLOWLOCATION =&gt; <span class="php-keyword1">true</span>,     <span class="php-comment">// follow redirects</span>
+</span><span id="88" class="l"><a class="l" href="#88"> 88: </a>        CURLOPT_ENCODING       =&gt; <span class="php-quote">&quot;&quot;</span>,       <span class="php-comment">// handle compressed</span>
+</span><span id="89" class="l"><a class="l" href="#89"> 89: </a>        CURLOPT_USERAGENT      =&gt; <span class="php-quote">&quot;spider&quot;</span>, <span class="php-comment">// who am i</span>
+</span><span id="90" class="l"><a class="l" href="#90"> 90: </a>        CURLOPT_AUTOREFERER    =&gt; <span class="php-keyword1">true</span>,     <span class="php-comment">// set referer on redirect</span>
+</span><span id="91" class="l"><a class="l" href="#91"> 91: </a>        CURLOPT_CONNECTTIMEOUT =&gt; <span class="php-num">120</span>,      <span class="php-comment">// timeout on connect</span>
+</span><span id="92" class="l"><a class="l" href="#92"> 92: </a>        CURLOPT_TIMEOUT        =&gt; <span class="php-num">120</span>,      <span class="php-comment">// timeout on response</span>
+</span><span id="93" class="l"><a class="l" href="#93"> 93: </a>        CURLOPT_MAXREDIRS      =&gt; <span class="php-num">10</span>,       <span class="php-comment">// stop after 10 redirects</span>
+</span><span id="94" class="l"><a class="l" href="#94"> 94: </a>    );
+</span><span id="95" class="l"><a class="l" href="#95"> 95: </a>
+</span><span id="96" class="l"><a class="l" href="#96"> 96: </a>    <span class="php-var">$ch</span>      = <span class="php-keyword2">curl_init</span>( <span class="php-var">$url</span> );
+</span><span id="97" class="l"><a class="l" href="#97"> 97: </a>    <span class="php-keyword2">curl_setopt_array</span>( <span class="php-var">$ch</span>, <span class="php-var">$options</span> );
+</span><span id="98" class="l"><a class="l" href="#98"> 98: </a>    <span class="php-var">$content</span> = <span class="php-keyword2">curl_exec</span>( <span class="php-var">$ch</span> );
+</span><span id="99" class="l"><a class="l" href="#99"> 99: </a>    <span class="php-var">$err</span>     = <span class="php-keyword2">curl_errno</span>( <span class="php-var">$ch</span> );
+</span><span id="100" class="l"><a class="l" href="#100">100: </a>    <span class="php-var">$errmsg</span>  = <span class="php-keyword2">curl_error</span>( <span class="php-var">$ch</span> );
+</span><span id="101" class="l"><a class="l" href="#101">101: </a>    <span class="php-var">$header</span>  = <span class="php-keyword2">curl_getinfo</span>( <span class="php-var">$ch</span> );
+</span><span id="102" class="l"><a class="l" href="#102">102: </a>    <span class="php-keyword2">curl_close</span>( <span class="php-var">$ch</span> );
+</span><span id="103" class="l"><a class="l" href="#103">103: </a>
+</span><span id="104" class="l"><a class="l" href="#104">104: </a>    <span class="php-var">$header</span>[<span class="php-quote">'errno'</span>]   = <span class="php-var">$err</span>;
+</span><span id="105" class="l"><a class="l" href="#105">105: </a>    <span class="php-var">$header</span>[<span class="php-quote">'errmsg'</span>]  = <span class="php-var">$errmsg</span>;
+</span><span id="106" class="l"><a class="l" href="#106">106: </a>    <span class="php-var">$header</span>[<span class="php-quote">'content'</span>] = <span class="php-var">$content</span>;
+</span><span id="107" class="l"><a class="l" href="#107">107: </a>    <span class="php-keyword1">return</span> <span class="php-var">$header</span>;
+</span><span id="108" class="l"><a class="l" href="#108">108: </a>}
+</span><span id="109" class="l"><a class="l" href="#109">109: </a>
+</span><span id="110" class="l"><a class="l" href="#110">110: </a><span class="xlang">?&gt;</span>
+</span><span id="111" class="l"><a class="l" href="#111">111: </a></span></code></pre>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>
