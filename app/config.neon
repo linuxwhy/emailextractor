@@ -43,5 +43,5 @@ development < common:
 			username = root
 			password = root
 			charset = utf8
-			profiler: false
+			profiler: true
 console < common:

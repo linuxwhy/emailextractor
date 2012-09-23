@@ -21,17 +21,19 @@ $configurator = new Nette\Config\Configurator;
 
 // Enable Nette Debugger for error visualisation & logging
 //$configurator->setDebugMode($configurator::AUTO);
-$configurator->enableDebugger(__DIR__ . '/../log');
+$configurator->enableDebugger(WWW_DIR . '/../log');
 
 // Enable RobotLoader - this will load all classes automatically
-$configurator->setTempDirectory(__DIR__ . '/../temp');
+
+$configurator->setTempDirectory(WWW_DIR . '/../temp');
 $configurator->createRobotLoader()
 	->addDirectory(APP_DIR)
 	->addDirectory(LIBS_DIR)
 	->register();
 
 // Create Dependency Injection container from config.neon file
-$configurator->addConfig(__DIR__ . '/config.neon');
+$configurator->addConfig(APP_DIR . '/config.neon');
+
 $container = $configurator->createContainer();
 
 Addons\Panels\Callback::register($container);
@@ -49,4 +51,4 @@ $container->router[] = new Route('<presenter>/<action>[/<id>]', 'Homepage:defaul
 
 
 // Configure and run the application!
-$container->application->run();
+//$container->application->run();

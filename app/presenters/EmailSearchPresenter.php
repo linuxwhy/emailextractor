@@ -89,7 +89,7 @@ class EmailSearchPresenter extends BasePresenter {
 		$f->addSelect('spojka', 'Spojka medzi slovami', array('or'=>'or', 'and'=>'and'));
 		$f->addCheckbox('search_zlatestranky', 'Hladat na Zlatych strankach');
 		$f->addCheckbox('search_web_pages', 'Hladat na Webovych strankach');
-		$f->onSubmit[] = array($this, 'actionSearch');
+		$f->onSuccess[] = array($this, 'actionSearch');
 		
 		$f->setDefaults( array('spojka'=>"or"));
 		return $f;

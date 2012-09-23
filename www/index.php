@@ -25,3 +25,5 @@ define('VENDOR_DIR', WWW_DIR . '/../vendor');
 
 // load bootstrap file
 require APP_DIR . '/bootstrap.php';
+
+$container->application->run();

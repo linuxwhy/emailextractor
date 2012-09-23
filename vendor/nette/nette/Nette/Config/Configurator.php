@@ -291,6 +291,7 @@ class Configurator extends Nette\Object
 
 	protected function getCacheDirectory()
 	{
+		
 		return empty($this->parameters['tempDir']) ? NULL : $this->parameters['tempDir'] . '/cache';
 	}
 
