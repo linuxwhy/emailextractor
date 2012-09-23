@@ -28,9 +28,9 @@ production < common:
 		database:
 			driver = mysql
 			host = localhost
-			database = email_extractor
-			username = root
-			password = root
+			database = emailex_27700
+			username = emailex_27700
+			password = 4aoaFTbd8cvWxp
 			charset = utf8
 			profiler: false
 
