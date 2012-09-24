@@ -1,6 +1,38 @@
 {
-    "hash": "b4f618a6cec81994cf1d10c8698b0e57",
+    "hash": "11313f89a43ab4e4caa6b0fd08db67ae",
     "packages": [
+        {
+            "name": "claylo/selenium-server-standalone",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/claylo/selenium-server-standalone.git",
+                "reference": "2.25.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/claylo/selenium-server-standalone/zipball/2.25.0",
+                "reference": "2.25.0",
+                "shasum": ""
+            },
+            "time": "1346300784",
+            "type": "library",
+            "installation-source": "source",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "OpenQA",
+                    "homepage": "http://seleniumhq.org/"
+                }
+            ],
+            "description": "Composer distribution of Selenium Server Standalone, the browser automation framework.",
+            "keywords": [
+                "testing",
+                "selenium"
+            ]
+        },
         {
             "name": "dg/dibi",
             "version": "v2.0.1",
@@ -15,7 +47,7 @@
                 "reference": "v2.0.1",
                 "shasum": ""
             },
-            "time": "2012-03-30 18:45:37",
+            "time": "2012-03-30 16:45:37",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -114,7 +146,7 @@
                 "reference": "v2.0.5",
                 "shasum": ""
             },
-            "time": "2012-08-30 11:15:24",
+            "time": "2012-08-30 09:15:24",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -166,6 +198,7 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "kdyby/html-validator-panel": 20
+        "kdyby/html-validator-panel": 20,
+        "claylo/selenium-server-standalone": 20
     }
 }

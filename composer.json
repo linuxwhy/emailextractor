@@ -3,6 +3,7 @@
         "php" : ">=5.3.2",
         "nette/nette": "2.0.*",
 		"dg/dibi": ">=2",
-		"kdyby/html-validator-panel": "@dev"
+		"kdyby/html-validator-panel": "@dev",
+		"claylo/selenium-server-standalone":"@dev"
     }
 }

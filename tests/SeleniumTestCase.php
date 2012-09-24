@@ -8,6 +8,7 @@ class SeleniumTestCase extends \PHPUnit_Extensions_Selenium2TestCase
 	public function setUp()
 	{
 		$params = $this->getContainer()->getParameters();
+//		var_dump($params);
 		$seleniumConfiguration = $params['selenium'];
 		$this->setHost($seleniumConfiguration['host']);
 		$this->setBrowser($seleniumConfiguration['browser']);

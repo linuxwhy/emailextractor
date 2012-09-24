@@ -14,7 +14,7 @@
             "reference": "v2.0.1",
             "shasum": ""
         },
-        "time": "2012-03-30 18:45:37",
+        "time": "2012-03-30 16:45:37",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -64,7 +64,7 @@
             "reference": "v2.0.5",
             "shasum": ""
         },
-        "time": "2012-08-30 11:15:24",
+        "time": "2012-08-30 09:15:24",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -132,7 +132,7 @@
         "conflict": {
             "kdyby/framework": "self.version"
         },
-        "time": "2012-09-23 10:35:05",
+        "time": "2012-09-23 08:35:05",
         "type": "library",
         "installation-source": "source",
         "autoload": {
@@ -158,6 +158,39 @@
             "html",
             "nette",
             "kdyby"
+        ]
+    },
+    {
+        "name": "claylo/selenium-server-standalone",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/claylo/selenium-server-standalone.git",
+            "reference": "2.25.0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://github.com/claylo/selenium-server-standalone/zipball/2.25.0",
+            "reference": "2.25.0",
+            "shasum": ""
+        },
+        "time": "2012-08-30 04:26:24",
+        "type": "library",
+        "installation-source": "source",
+        "license": [
+            "Apache-2.0"
+        ],
+        "authors": [
+            {
+                "name": "OpenQA",
+                "homepage": "http://seleniumhq.org/"
+            }
+        ],
+        "description": "Composer distribution of Selenium Server Standalone, the browser automation framework.",
+        "keywords": [
+            "testing",
+            "selenium"
         ]
     }
 ]
